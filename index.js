@@ -1,5 +1,7 @@
 
 const inquirer = require("inquirer");
+const axios = require("axios");
+
 
 async function init() {
     const userInput = await
@@ -46,6 +48,10 @@ async function init() {
     console.log(description);
     console.log(installation);
     console.log(license);
+
+    const gitResponse = await axios.get(`https://api.github.com/users/${username}`);
+
+    console.log(gitResponse);
 }
 
 init();

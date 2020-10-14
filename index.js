@@ -1,4 +1,4 @@
-// array of questions for user
+
 const inquirer = require("inquirer");
 
 async function init() {
@@ -34,6 +34,18 @@ async function init() {
                 }
             ])
     console.log(userInput)
+
+    const username = userInput.username;
+    const Title = userInput.title;
+    const description = userInput.description;
+    const installation = userInput.installation;
+    const license = userInput.license;
+
+    console.log(username);
+    console.log(Title);
+    console.log(description);
+    console.log(installation);
+    console.log(license);
 }
 
 init();

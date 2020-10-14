@@ -51,7 +51,11 @@ async function init() {
 
     const gitResponse = await axios.get(`https://api.github.com/users/${username}`);
 
-    console.log(gitResponse);
+    const gitavatar = gitResponse.data;
+
+
+
+    console.log(gitURL)
 }
 
 init();

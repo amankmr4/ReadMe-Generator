@@ -9,13 +9,14 @@ async function init() {
             .prompt([
                 {
                     type: "input",
-                    message: "What is your user name?",
-                    name: "username"
-                },
-                {
-                    type: "input",
                     message: "What your project Title?",
                     name: "title"
+                },
+                {
+                    type: "confirm",
+                    message: "We will automatically create a table of contents for you. Please press the enter key to proceed",
+                    name: "tableofcontents"
+
                 },
                 {
                     type: "input",
@@ -33,8 +34,16 @@ async function init() {
                     message: "please choise whiich license you will be using",
                     choices: ["MIT", "Apache License 2.0", "Mozilla Public License 2.0"]
 
-                }
+                },
+
+                {
+                    type: "input",
+                    message: "What is your user name?",
+                    name: "username"
+                },
+
             ])
+
     console.log(userInput)
 
     const username = userInput.username;
@@ -50,12 +59,12 @@ async function init() {
     console.log(license);
 
     const gitResponse = await axios.get(`https://api.github.com/users/${username}`);
+    const gitInfo = gitResponse.data
+    const gitProfilePage = gitResponse.html_url
 
-    const gitavatar = gitResponse.data;
 
 
-
-    console.log(gitURL)
+    console.log(gitInfo)
 }
 
 init();

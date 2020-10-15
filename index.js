@@ -13,12 +13,6 @@ async function init() {
                     name: "title"
                 },
                 {
-                    type: "confirm",
-                    message: "We will automatically create a table of contents for you. Please press the enter key to proceed",
-                    name: "tableofcontents"
-
-                },
-                {
                     type: "input",
                     message: "Enter the description of your project",
                     name: "description"
@@ -28,10 +22,30 @@ async function init() {
                     message: "What is steps do you require to install this project? ",
                     name: "installation"
                 },
+
+                {
+                    type: "input",
+                    message: "What is steps for usage of this project? ",
+                    name: "usage"
+                },
+
+                {
+                    type: "input",
+                    message: "Please enter contribution guidelines",
+                    name: "contributors"
+                },
+
+                {
+                    type: "input",
+                    message: "Please enter the test instruction for this project",
+                    name: "instructions"
+                },
+
+
                 {
                     type: "list",
                     name: "license",
-                    message: "please choise whiich license you will be using",
+                    message: "please choise which license you will be using",
                     choices: ["MIT", "Apache License 2.0", "Mozilla Public License 2.0"]
 
                 },
@@ -40,6 +54,12 @@ async function init() {
                     type: "input",
                     message: "What is your user name?",
                     name: "username"
+                },
+
+                {
+                    type: "input",
+                    message: "Please enter your email address",
+                    name: "email"
                 },
 
             ])

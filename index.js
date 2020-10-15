@@ -1,9 +1,10 @@
 
 const inquirer = require("inquirer");
 const axios = require("axios");
-
+const fs = require('fs');
 
 async function init() {
+
     const userInput = await
         inquirer
             .prompt([
@@ -32,7 +33,7 @@ async function init() {
                 {
                     type: "input",
                     message: "Please enter contribution guidelines",
-                    name: "contributors"
+                    name: "contributing"
                 },
 
                 {
@@ -66,25 +67,47 @@ async function init() {
 
     console.log(userInput)
 
-    const username = userInput.username;
-    const Title = userInput.title;
-    const description = userInput.description;
-    const installation = userInput.installation;
-    const license = userInput.license;
+    var output = (`
+# Title
 
-    console.log(username);
-    console.log(Title);
-    console.log(description);
-    console.log(installation);
-    console.log(license);
+## Table Of Contents
 
-    const gitResponse = await axios.get(`https://api.github.com/users/${username}`);
-    const gitInfo = gitResponse.data
-    const gitProfilePage = gitResponse.html_url
+[Installation](#Installation)
+
+[Usage](#usage)
+
+[License](#License)
+
+[Contributing Guidelines](#contributingguidelines)
+
+[Test](#test)
+
+[Questions](#questions)
 
 
+## Installation
 
-    console.log(gitInfo)
+## Usage
+
+## License
+
+## Contributing Guidelines
+
+## Tests
+
+## Questions
+* If you have any any more question you can email me at 
+* My github profile link[github link]
+`)
+
+    var writeResult = fs.writeFileSync('readMe.md', output)
+    console.log("file generated....")
+
 }
+
+
+
+
+
 
 init();

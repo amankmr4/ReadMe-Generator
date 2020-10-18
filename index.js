@@ -76,7 +76,7 @@ async function init() {
     const gitUsername = userInput.username
     const userEmail = userInput.email
 
-    licenseOutput = () => {
+    licenseOutputLink = () => {
         if (projectLicense == "MIT") {
             const licenseLink = "https://opensource.org/licenses/MIT"
             return licenseLink
@@ -89,7 +89,21 @@ async function init() {
         }
     }
 
-    const licenseLink = await licenseOutput();
+    licenseOutputBadge = () => {
+        if (projectLicense == "MIT") {
+            const licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+            return licenseBadge
+        } else if (projectLicense == "Apache License 2.0") {
+            const licenseBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+            return licenseBadge
+        } else if (projectLicense == "Mozilla Public License 2.0") {
+            const licenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+            return licenseBadge
+        }
+    }
+
+    const licenseLink = await licenseOutputLink();
+    const licenseBadge = await licenseOutputBadge();
 
     console.log(licenseLink)
     try {
@@ -138,7 +152,8 @@ ${projectUsage}
 
 
 ## License
-${projectLicense}
+${projectLicense}\
+${licenseBadge}
 
 
 

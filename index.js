@@ -66,9 +66,10 @@ async function init() {
             ])
 
     console.log(userInput)
+    const usertitle = userInput.title
 
     var output = (`
-# Title
+# ${usertitle}
 
 ## Table Of Contents
 

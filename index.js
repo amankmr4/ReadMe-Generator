@@ -39,7 +39,7 @@ async function init() {
                 {
                     type: "input",
                     message: "Please enter the test instruction for this project",
-                    name: "instructions"
+                    name: "test"
                 },
 
 
@@ -64,40 +64,68 @@ async function init() {
                 },
 
             ])
-
+    //Putting all the inputs from the prompt into an constanent and it it will be called back later
     console.log(userInput)
-    const usertitle = userInput.title
-
+    const projectTitle = userInput.title
+    const projectDescription = userInput.description
+    const projectInstallation = userInput.installation
+    const projectTest = userInput.test
+    const projectUsage = userInput.usage
+    const projectContributingGuideline = userInput.contributing
+    const projectLicense = userInput.license
+    const gitUSername = userInput.username
+    const userEmail = userInput.email
     var output = (`
-# ${usertitle}
+# ${projectTitle}
 
 ## Table Of Contents
 
-[Installation](#Installation)
+[Description](#description)
+
+[Installation](#installation)
 
 [Usage](#usage)
 
-[License](#License)
-
-[Contributing Guidelines](#contributingguidelines)
-
 [Test](#test)
+
+[Contributing Guidelines](#Contributing-Guidelines)
+
+[License](#license)
 
 [Questions](#questions)
 
+## Description
+${projectDescription}
+<br>
+
 
 ## Installation
+${projectInstallation}
+<br>
+
 
 ## Usage
+${projectUsage}
+<br>
+
 
 ## License
+${projectLicense}
+<br>
+
 
 ## Contributing Guidelines
+${projectContributingGuideline}
+<br>
 
-## Tests
+
+
+## Test
+${projectTest}
+<br>
 
 ## Questions
-* If you have any any more question you can email me at 
+* If you have any any more question you can email me at ${userEmail}
 * My github profile link[github link]
 `)
 

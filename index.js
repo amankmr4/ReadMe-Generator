@@ -75,6 +75,30 @@ async function init() {
     const projectLicense = userInput.license
     const gitUSername = userInput.username
     const userEmail = userInput.email
+
+    // this function will check what license is chosen
+    licenseOutput = () => {
+        if (projectLicense == "MIT") {
+            const licenseLink = "https://opensource.org/licenses/MIT"
+            return licenseLink
+        } else if (projectLicense == "Apache License 2.0") {
+            const licenseLink = "https://opensource.org/licenses/Apache-2.0"
+            return licenseLink
+        } else if (projectLicense == "Apache License 2.0") {
+            const licenseLink = "https://opensource.org/licenses/MIT"
+            return licenseLink
+        }
+    }
+
+    const licenseLink = await licenseOutput();
+
+    console.log(licenseLink)
+
+
+
+
+
+    //Here we will output the markdown file
     var output = (`
 # ${projectTitle}
 
@@ -96,22 +120,23 @@ async function init() {
 
 ## Description
 ${projectDescription}
-<br>
+
 
 
 ## Installation
 ${projectInstallation}
-<br>
+
 
 
 ## Usage
 ${projectUsage}
-<br>
+
 
 
 ## License
 ${projectLicense}
-<br>
+${licenseLink}
+
 
 
 ## Contributing Guidelines
@@ -133,10 +158,5 @@ ${projectTest}
     console.log("file generated....")
 
 }
-
-
-
-
-
 
 init();

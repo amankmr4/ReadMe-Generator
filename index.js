@@ -32,7 +32,7 @@ async function init() {
 
                 {
                     type: "input",
-                    message: "Please enter contribution guidelines",
+                    message: "What is the  contribution guidelines?",
                     name: "contributing"
                 },
 
@@ -59,7 +59,7 @@ async function init() {
 
                 {
                     type: "input",
-                    message: "what is your email address",
+                    message: "what is your email address?",
                     name: "email"
                 },
 

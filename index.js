@@ -15,7 +15,7 @@ async function init() {
                 },
                 {
                     type: "input",
-                    message: "Enter the description of your project",
+                    message: "what is  the description of your project?",
                     name: "description"
                 },
                 {
@@ -59,7 +59,7 @@ async function init() {
 
                 {
                     type: "input",
-                    message: "Please enter your email address",
+                    message: "what is your email address",
                     name: "email"
                 },
 
@@ -152,7 +152,8 @@ ${projectUsage}
 
 
 ## License
-${projectLicense}\
+${projectLicense}
+
 ${licenseBadge}
 
 
